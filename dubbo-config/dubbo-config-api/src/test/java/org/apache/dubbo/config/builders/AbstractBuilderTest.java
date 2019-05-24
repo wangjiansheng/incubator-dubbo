@@ -17,13 +17,16 @@
 package org.apache.dubbo.config.builders;
 
 import org.apache.dubbo.config.AbstractConfig;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * 基本都是设置字符串参数
+ */
 class AbstractBuilderTest {
 
     @Test

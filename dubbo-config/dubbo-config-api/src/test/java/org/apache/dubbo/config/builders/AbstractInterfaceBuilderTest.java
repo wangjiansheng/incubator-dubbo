@@ -29,6 +29,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 
+/**
+ * 基本都是设置字符串参数---接口参数
+ */
 class AbstractInterfaceBuilderTest {
 
     @Test

@@ -174,6 +174,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
         }
     };
 
+    //初始化日志  因为继承了AbstractConfig，AbstractConfig实例化了日志
     public ReferenceConfig() {
     }
 
@@ -229,7 +230,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
             throw new IllegalStateException("The invoker of ReferenceConfig(" + url + ") has already destroyed!");
         }
         if (ref == null) {
-            init();
+            init();//初始化
         }
         return ref;
     }
@@ -370,6 +371,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
             }
 
             if (urls.size() == 1) {
+                //refprotocol 为Protocol spi
                 invoker = refprotocol.refer(interfaceClass, urls.get(0));
             } else {
                 List<Invoker<?>> invokers = new ArrayList<Invoker<?>>();

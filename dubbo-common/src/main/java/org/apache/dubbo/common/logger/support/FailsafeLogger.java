@@ -20,6 +20,10 @@ import org.apache.dubbo.common.Version;
 import org.apache.dubbo.common.logger.Logger;
 import org.apache.dubbo.common.utils.NetUtils;
 
+/**
+ *
+ * 故障安全记录器
+ */
 public class FailsafeLogger implements Logger {
 
     private Logger logger;
@@ -36,6 +40,7 @@ public class FailsafeLogger implements Logger {
         this.logger = logger;
     }
 
+    //dubbo日志封装
     private String appendContextMessage(String msg) {
         return " [DUBBO] " + msg + ", dubbo version: " + Version.getVersion() + ", current host: " + NetUtils.getLocalHost();
     }

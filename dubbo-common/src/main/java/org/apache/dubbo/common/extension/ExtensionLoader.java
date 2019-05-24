@@ -516,7 +516,7 @@ public class ExtensionLoader<T> {
         return new IllegalStateException(buf.toString());
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")//通过url前缀实例化
     private T createExtension(String name) {
         Class<?> clazz = getExtensionClasses().get(name);
         if (clazz == null) {

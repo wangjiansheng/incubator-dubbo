@@ -42,6 +42,7 @@ public class LoggerFactory {
     // search common-used logging frameworks
     static {
         String logger = System.getProperty("dubbo.application.logger", "");
+        //默认日志  logger=''
         switch (logger) {
             case "slf4j":
                 setLoggerAdapter(new Slf4jLoggerAdapter());
@@ -59,6 +60,7 @@ public class LoggerFactory {
                 setLoggerAdapter(new Log4j2LoggerAdapter());
                 break;
             default:
+                //默认调用这里
                 List<Class<? extends LoggerAdapter>> candidates = Arrays.asList(
                         Log4jLoggerAdapter.class,
                         Slf4jLoggerAdapter.class,
@@ -93,6 +95,7 @@ public class LoggerFactory {
     public static void setLoggerAdapter(LoggerAdapter loggerAdapter) {
         if (loggerAdapter != null) {
             Logger logger = loggerAdapter.getLogger(LoggerFactory.class.getName());
+            logger.info("设置日志适配器 xxxxxxxxxxxxxx");
             logger.info("using logger: " + loggerAdapter.getClass().getName());
             LoggerFactory.LOGGER_ADAPTER = loggerAdapter;
             for (Map.Entry<String, FailsafeLogger> entry : LOGGERS.entrySet()) {

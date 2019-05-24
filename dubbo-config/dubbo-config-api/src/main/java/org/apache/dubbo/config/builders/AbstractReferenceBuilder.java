@@ -43,11 +43,13 @@ public abstract class AbstractReferenceBuilder<T extends AbstractReferenceConfig
     protected String generic;
 
     /**
+     * 是否从当前JVM中查找引用的实例
      * Whether to find reference's instance from the current JVM
      */
     protected Boolean injvm;
 
     /**
+     * 懒惰创建连接
      * Lazy create connection
      */
     protected Boolean lazy;
@@ -62,6 +64,7 @@ public abstract class AbstractReferenceBuilder<T extends AbstractReferenceConfig
     protected String version;
 
     /**
+     * 客户方将参考的远程服务组
      * The remote service group the customer side will reference
      */
     protected String group;

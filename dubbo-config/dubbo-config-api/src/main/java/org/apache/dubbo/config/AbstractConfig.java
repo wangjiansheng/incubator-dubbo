@@ -43,11 +43,15 @@ import java.util.stream.Collectors;
 
 /**
  * Utility methods and public methods for parsing configuration
+ * 用于解析配置的实用方法和公共方法
+ *
+ * dubbo 公共配置类
  *
  * @export
  */
 public abstract class AbstractConfig implements Serializable {
 
+    //日志初始化的地方
     protected static final Logger logger = LoggerFactory.getLogger(AbstractConfig.class);
     private static final long serialVersionUID = 4267533505537413570L;
 

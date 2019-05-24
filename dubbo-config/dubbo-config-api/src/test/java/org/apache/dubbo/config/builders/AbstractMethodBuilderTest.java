@@ -24,12 +24,15 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 基本都是设置字符串参数---方法参数
+ */
 class AbstractMethodBuilderTest {
 
     @Test
     void timeout() {
         MethodBuilder builder = new MethodBuilder();
-        builder.timeout(10);
+        builder.timeout(10);//超时时间
 
         Assertions.assertEquals(10, builder.build().getTimeout());
     }
@@ -37,7 +40,7 @@ class AbstractMethodBuilderTest {
     @Test
     void retries() {
         MethodBuilder builder = new MethodBuilder();
-        builder.retries(3);
+        builder.retries(3);//重试
 
         Assertions.assertEquals(3, builder.build().getRetries());
     }

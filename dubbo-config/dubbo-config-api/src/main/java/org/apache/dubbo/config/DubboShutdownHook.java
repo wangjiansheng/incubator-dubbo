@@ -25,7 +25,7 @@ import org.apache.dubbo.rpc.Protocol;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * The shutdown hook thread to do the clean up stuff.
+ * DubboShutdownHookThe shutdown hook thread to do the clean up stuff.
  * This is a singleton in order to ensure there is only one shutdown hook registered.
  * Because {@link ApplicationShutdownHooks} use {@link java.util.IdentityHashMap}
  * to store the shutdown hooks.
@@ -55,6 +55,7 @@ public class DubboShutdownHook extends Thread {
     @Override
     public void run() {
         if (logger.isInfoEnabled()) {
+            logger.info("运行 shutdown hook xxxxxxxxxxxxxxxxxxxxxxx");
             logger.info("Run shutdown hook now.");
         }
         doDestroy();
@@ -85,9 +86,10 @@ public class DubboShutdownHook extends Thread {
         if (!destroyed.compareAndSet(false, true)) {
             return;
         }
+        //销毁所有注册表
         // destroy all the registries
         AbstractRegistryFactory.destroyAll();
-        // destroy all the protocols
+        // destroy all the protocols 销毁所有协议
         destroyProtocols();
     }
 

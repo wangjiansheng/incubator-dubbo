@@ -85,6 +85,7 @@ public abstract class AbstractServiceBuilder<T extends AbstractServiceConfig, B 
 
     /**
      * The protocol list the service will export with
+     * 协议配置
      */
     protected List<ProtocolConfig> protocols;
     protected String protocolIds;
