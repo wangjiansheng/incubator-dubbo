@@ -26,7 +26,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * SpringContainer. (SPI, Singleton, ThreadSafe)
- *
+ *Spring的容器类实现
  * The container class implementation for Spring
  */
 public class SpringContainer implements Container {
@@ -39,7 +39,7 @@ public class SpringContainer implements Container {
     public static ClassPathXmlApplicationContext getContext() {
         return context;
     }
-
+//dubbo.properties配置文件中读取的即可，如果我们没有在类路径下配置这个属性，默认是从DEFAULT_SPRING_CONFIG对应的META-INF里去读取的。
     @Override
     public void start() {
         String configPath = ConfigUtils.getProperty(SPRING_CONFIG);

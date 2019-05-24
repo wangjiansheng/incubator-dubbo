@@ -53,7 +53,9 @@ public class Main {
     public static void main(String[] args) {
         try {
             if (ArrayUtils.isEmpty(args)) {
-                String config = ConfigUtils.getProperty(CONTAINER_KEY, loader.getDefaultExtensionName());
+                //传入的泛型类是Containe  前面定义的
+                //private static final ExtensionLoader loader = ExtensionLoader.getExtensionLoader(Container.class);
+                String config = ConfigUtils.getProperty(CONTAINER_KEY, loader.getDefaultExtensionName());//返回的是spring，代入原代码中，即是SpringContainer。
                 args = Constants.COMMA_SPLIT_PATTERN.split(config);
             }
 
@@ -69,6 +71,7 @@ public class Main {
                     public void run() {
                         for (Container container : containers) {
                             try {
+                                logger.debug("dubbo hook 被调用");
                                 container.stop();
                                 logger.info("Dubbo " + container.getClass().getSimpleName() + " stopped!");
                             } catch (Throwable t) {
