@@ -34,13 +34,16 @@ public class ApplicationBuilder extends AbstractBuilder<ApplicationConfig, Appli
     private String name;
     private String version;
     private String owner;
+    //所有者
     private String organization;
     private String architecture;
     private String environment = Constants.PRODUCTION_ENVIRONMENT;
     private String compiler;
     private String logger;
+    //注册配置
     private List<RegistryConfig> registries;
     private String registryIds;
+    //设置监控中心
     private MonitorConfig monitor;
     private Boolean isDefault;
     private String dumpDirectory;

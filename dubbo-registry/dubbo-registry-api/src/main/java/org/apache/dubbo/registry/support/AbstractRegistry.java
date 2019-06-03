@@ -97,6 +97,7 @@ public abstract class AbstractRegistry implements Registry {
         this.file = file;
         // When starting the subscription center,
         // we need to read the local cache file for future Registry fault tolerance processing.
+        //加载注册缓存
         loadProperties();
         notify(url.getBackupUrls());
     }
@@ -201,6 +202,7 @@ public abstract class AbstractRegistry implements Registry {
                 in = new FileInputStream(file);
                 properties.load(in);
                 if (logger.isInfoEnabled()) {
+                    logger.info("加载注册的缓存文件");
                     logger.info("Load registry cache file " + file + ", data: " + properties);
                 }
             } catch (Throwable e) {

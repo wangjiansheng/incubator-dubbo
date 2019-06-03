@@ -25,7 +25,7 @@ import org.apache.dubbo.demo.DemoService;
 
 public class Application {
     /**
-     * In order to make sure multicast registry works, need to specify '-Djava.net.preferIPv4Stack=true' before
+     * in order to make sure multicast registry works, need to specify '-djava.net.preferipv4stack=true' before
      * launch the application
      */
     public static void main(String[] args) {
@@ -35,6 +35,7 @@ public class Application {
         reference.setInterface(DemoService.class);
         DemoService service = reference.get();
         String message = service.sayHello("dubbo");
+        System.out.println("---------------------");
         System.out.println(message);
     }
 }

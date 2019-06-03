@@ -22,6 +22,7 @@ import java.util.Map;
 
 /**
  * This is a builder for build {@link ConfigCenterConfig}.
+ * 配置中心
  *
  * @since 2.7
  */
@@ -49,7 +50,7 @@ public class ConfigCenterBuilder extends AbstractBuilder<ConfigCenterConfig, Con
         return getThis();
     }
 
-	public ConfigCenterBuilder address(String address) {
+    public ConfigCenterBuilder address(String address) {
         this.address = address;
         return getThis();
     }

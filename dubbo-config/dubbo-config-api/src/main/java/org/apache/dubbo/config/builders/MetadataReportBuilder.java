@@ -22,12 +22,12 @@ import java.util.Map;
 
 /**
  * This is a builder for build {@link MetadataReportConfig}.
- *
+ *report:报告、汇报、反映
  * @since 2.7
  */
 public class MetadataReportBuilder extends AbstractBuilder<MetadataReportConfig, MetadataReportBuilder> {
 
-    // Register center address
+    // Register center address  注册中心地址
     private String address;
 
     // Username to login register center
@@ -47,6 +47,7 @@ public class MetadataReportBuilder extends AbstractBuilder<MetadataReportConfig,
     // Customized parameters
     private Map<String, String> parameters;
 
+    //重试时间
     private Integer retryTimes;
 
     private Integer retryPeriod;
@@ -56,7 +57,7 @@ public class MetadataReportBuilder extends AbstractBuilder<MetadataReportConfig,
     private Boolean cycleReport;
 
     /**
-     * Sync report, default async
+     * Sync report, default async 同步报告，默认为异步
      */
     private Boolean syncReport;
 

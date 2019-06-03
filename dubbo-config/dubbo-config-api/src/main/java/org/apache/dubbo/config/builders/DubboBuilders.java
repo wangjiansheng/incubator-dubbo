@@ -18,6 +18,7 @@ package org.apache.dubbo.config.builders;
 
 /**
  * The tools for creat builder
+ * 工具建造类
  *
  * @since 2.7
  */

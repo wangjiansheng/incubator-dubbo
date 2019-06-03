@@ -50,7 +50,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
- * MulticastRegistry
+ * multicastregistry 多播注册
  */
 public class MulticastRegistry extends FailbackRegistry {
 
@@ -76,7 +76,7 @@ public class MulticastRegistry extends FailbackRegistry {
     private volatile boolean admin = false;
 
     public MulticastRegistry(URL url) {
-        super(url);
+        super(url);//调用父类，加载注册缓存
         if (url.isAnyHost()) {
             throw new IllegalStateException("registry address == null");
         }
