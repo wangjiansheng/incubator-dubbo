@@ -50,6 +50,9 @@ public class Main {
 
     private static final Condition STOP = LOCK.newCondition();
 
+//    通过SPI加载具体的容器实例
+////    注册JVM关闭钩子，实现优雅停机
+////            服务启动与阻塞
     public static void main(String[] args) {
         try {
             if (ArrayUtils.isEmpty(args)) {

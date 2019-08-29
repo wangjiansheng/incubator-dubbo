@@ -290,7 +290,7 @@ public class RegistryProtocol implements Protocol {
      * @return url to registry.
      */
     private URL getRegisteredProviderUrl(final URL providerUrl, final URL registryUrl) {
-        //The address you see at the registry
+        //The address you see at the registry 您在注册表中看到的地址
         if (!registryUrl.getParameter(SIMPLIFIED_KEY, false)) {
             return providerUrl.removeParameters(getFilteredKeys(providerUrl)).removeParameters(
                     MONITOR_KEY, BIND_IP_KEY, BIND_PORT_KEY, QOS_ENABLE, QOS_PORT, ACCEPT_FOREIGN_IP, VALIDATION_KEY,

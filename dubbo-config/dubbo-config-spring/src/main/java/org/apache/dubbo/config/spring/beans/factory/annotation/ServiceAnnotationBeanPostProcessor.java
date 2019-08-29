@@ -67,6 +67,8 @@ import static org.springframework.util.ClassUtils.resolveClassName;
  * {@link Service} Annotation
  * {@link BeanDefinitionRegistryPostProcessor Bean Definition Registry Post Processor}
  *
+ *  dubbo 服务导出解析类
+ *
  * @since 2.5.8
  */
 public class ServiceAnnotationBeanPostProcessor implements BeanDefinitionRegistryPostProcessor, EnvironmentAware,
